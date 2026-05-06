@@ -1,34 +1,27 @@
 {
-  "name": "react",
+  "name": "stanford-volleyball-inventory",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "main": "src/index.tsx",
+  "private": true,
+  "type": "module",
   "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-scripts": "^5.0.0",
     "@supabase/supabase-js": "2.103.0",
-    "lucide-react": "1.8.0",
     "jspdf": "4.2.1",
-    "jspdf-autotable": "5.0.7"
+    "jspdf-autotable": "5.0.7",
+    "lucide-react": "1.8.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "4.9.5",
     "@types/react": "18.2.66",
-    "@types/react-dom": "18.2.22",
-    "loader-utils": "3.2.1",
-    "typescript": "4.9.5"
+    "@types/react-dom": "18.2.22"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
 }
