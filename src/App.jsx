@@ -41,6 +41,7 @@ const APPAREL_SIZES = [
   "Y-L",
   "Y-S",
   "Onesie",
+  "One Size",
 ];
 
 const COLOR_OPTIONS = ["Black", "Cardinal Red", "Grey", "Red", "White", "Other"];
