@@ -39,6 +39,7 @@ const APPAREL_SIZES = [
   "S",
   "Y-XL",
   "Y-L",
+  "Y-M",
   "Y-S",
   "Onesie",
   "One Size",
