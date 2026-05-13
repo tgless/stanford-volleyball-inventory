@@ -45,7 +45,7 @@ const APPAREL_SIZES = [
   "One Size",
 ];
 
-const COLOR_OPTIONS = ["Black", "Cardinal Red", "Grey", "Red", "White", "Other"];
+const COLOR_OPTIONS = ["Black", "Cardinal Red", "Grey", "Red", "White", "Pink/White", "White/Pink", "Other"];
 const ADD_NEW_LOCATION_VALUE = "__ADD_NEW_LOCATION__";
 
 const STANDARD_EXPORT_MODES = [
