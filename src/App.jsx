@@ -778,20 +778,17 @@ export default function App() {
   }, [inventoryCategory, jerseyPlayerGroups]);
 
   useEffect(() => {
-    if (
-      dynamicInventoryGroups.length > 0 &&
-      !dynamicInventoryGroups.includes(inventoryGroup)
-    ) {
-      setInventoryGroup(dynamicInventoryGroups[0]);
-    }
+  if (inventoryCategory === GIVEAWAY_CATEGORY) {
+    return;
+  }
 
-    if (
-      dynamicInventoryGroups.length === 0 &&
-      inventoryCategory === GIVEAWAY_CATEGORY
-    ) {
-      setInventoryGroup("");
-    }
-  }, [dynamicInventoryGroups, inventoryCategory, inventoryGroup]);
+  if (
+    dynamicInventoryGroups.length > 0 &&
+    !dynamicInventoryGroups.includes(inventoryGroup)
+  ) {
+    setInventoryGroup(dynamicInventoryGroups[0]);
+  }
+}, [dynamicInventoryGroups, inventoryCategory, inventoryGroup]);
 
   useEffect(() => {
     setExportState((prev) => ({
@@ -1509,13 +1506,13 @@ export default function App() {
                     ...(isActive ? styles.homeButtonActive : {}),
                   }}
                   onClick={() => {
-                    setInventoryCategory(card.title);
-                    if (card.title === GIVEAWAY_CATEGORY) {
-                      setInventoryGroup(jerseyPlayerGroups[0] || "");
-                    } else {
-                      setInventoryGroup(INVENTORY_GROUPS[card.title][0]);
-                    }
-                  }}
+  setInventoryCategory(card.title);
+  if (card.title === GIVEAWAY_CATEGORY) {
+    setInventoryGroup("");
+  } else {
+    setInventoryGroup(INVENTORY_GROUPS[card.title][0]);
+  }
+}}
                 >
                   <IconBadge Icon={card.Icon} active={isActive} large />
                   <div style={styles.homeButtonText}>{card.title}</div>
