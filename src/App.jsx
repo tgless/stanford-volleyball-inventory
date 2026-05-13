@@ -174,10 +174,10 @@ const STORAGE_OPTIONS = {
     "TG/WB Office",
   ],
   [GIVEAWAY_CATEGORY]: [
-    "Locker Room Closet - Bin 1",
-    "Locker Room Closet - Bin 2",
-    "Locker Room Closet - Bin 3",
-    "Locker Room Closet - Bin 4",
+    "Locker Room Closet - Bin B1",
+    "Locker Room Closet - Bin B2",
+    "Locker Room Closet - Bin B3",
+    "Locker Room Closet - Bin B4",
   ],
   "Gym Equipment": [
     "APG Closets",
