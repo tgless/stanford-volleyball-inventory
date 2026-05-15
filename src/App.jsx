@@ -778,7 +778,6 @@ export default function App() {
   }, [inventoryCategory, jerseyPlayerGroups]);
 
   useEffect(() => {
-  useEffect(() => {
   if (
     inventoryGroup &&
     dynamicInventoryGroups.length > 0 &&
