@@ -778,17 +778,15 @@ export default function App() {
   }, [inventoryCategory, jerseyPlayerGroups]);
 
   useEffect(() => {
-  if (inventoryCategory === GIVEAWAY_CATEGORY) {
-    return;
-  }
-
+  useEffect(() => {
   if (
+    inventoryGroup &&
     dynamicInventoryGroups.length > 0 &&
     !dynamicInventoryGroups.includes(inventoryGroup)
   ) {
-    setInventoryGroup(dynamicInventoryGroups[0]);
+    setInventoryGroup("");
   }
-}, [dynamicInventoryGroups, inventoryCategory, inventoryGroup]);
+}, [dynamicInventoryGroups, inventoryGroup]);
 
   useEffect(() => {
     setExportState((prev) => ({
@@ -848,11 +846,13 @@ export default function App() {
 
       const itemPlayerName = item.player_name || item.item_type || "";
       const selectedType =
-        inventoryCategory === GIVEAWAY_CATEGORY
-          ? !inventoryGroup || itemPlayerName === inventoryGroup
-          : inventoryGroup === "Misc."
-          ? true
-          : item.item_type === inventoryGroup;
+  !inventoryGroup
+    ? true
+    : inventoryCategory === GIVEAWAY_CATEGORY
+    ? itemPlayerName === inventoryGroup
+    : inventoryGroup === "Misc."
+    ? true
+    : item.item_type === inventoryGroup;
 
       const matchesSearch =
         !searchTerm ||
@@ -1507,11 +1507,7 @@ export default function App() {
                   }}
                   onClick={() => {
   setInventoryCategory(card.title);
-  if (card.title === GIVEAWAY_CATEGORY) {
-    setInventoryGroup("");
-  } else {
-    setInventoryGroup(INVENTORY_GROUPS[card.title][0]);
-  }
+  setInventoryGroup("");
 }}
                 >
                   <IconBadge Icon={card.Icon} active={isActive} large />
@@ -1666,9 +1662,7 @@ export default function App() {
 
               <div style={styles.inventoryResultsHeader}>
                 <div style={styles.inventoryResultsTitle}>
-                  {isGiveawayInventory
-                    ? inventoryGroup || "Giveaway Jerseys"
-                    : inventoryGroup}
+                  {inventoryGroup || `All ${inventoryCategory}`}
                 </div>
                 <div style={styles.inventoryResultsCount}>
                   {groupedInventoryItems.length} item(s)
